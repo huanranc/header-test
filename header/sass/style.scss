@@ -2,11 +2,14 @@ $black:#101010;
 $border-color:#393837;
 $button-color:#a3a3a3;
 $search-color:#e3bd08;
+$list-color:#ababab;
+
 
 $width:1240px;
 $height:52px;
-$item-width:187px;
-$item-height:39px;
+$item-width:188px;
+$item-height:300px;
+$list-height:40px;
 
 $right-height:50px;
 
@@ -39,16 +42,53 @@ body{
 	height:$height;
 		float:left;
 		background:$black;
-		&>ul{
+		.nav{
 			list-style-type: none;
+			position:relative;
 		}
-		& li{
+		.nav li{
 			float:left;
-			color:#fff;
-
-			margin:16px 8px 16px 16px;
+			width: $item-width;
+			height: $height;
 		}
+		.nav li a{
+			display: inline-block;
+			width: $item-width;
+			height: $height;
+			line-height: $height;
+			text-align: center;
+			color:#fff;
+			margin: 0px 10px;
+			text-decoration: none;
+		}
+		.nav .item{
+		width:$item-width;
+		height:$item-height;
+		background:$border-color;
+		list-style-type:none;
+		display:inline-block;
+		box-sizing:border-box;
+		position:absolute;
+		left:$item-width;
+		top:58px;
+		li{
+			float: left;
+			margin:0px;
+
+		}
+		li a{
+		display: inline-block;
+		border-bottom:1px solid $black;
+		width:$item-width;
+		line-height: $list-height;
+		height:$list-height;
+		text-align: center;
+		color:$list-color;
+		text-decoration: none;
 	}
+}
+	}
+
 	& .header-right{
 		width:1240px-995px;
 		height:$right-height;
@@ -75,22 +115,4 @@ body{
 		}
 	}
 
-
-
-}
- .active{
-	&>ul{
-		list-style-type: none;
-	}
-	& li{
-		float:left;
-		display: inline-block;
-	}
-	& li a{
-		float:left;
-		display: inline-block;
-		width:$item-width;
-		height: $item-height;
-		border-bottom:1px solid #black;
-	}
 }
