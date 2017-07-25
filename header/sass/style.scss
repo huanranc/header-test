@@ -13,7 +13,7 @@ $height:52px;
 $item-width:188px;
 $item-height:300px;
 $list-height:35px;
-$list-width:178px;
+$list-width:158px;
 
 $right-height:50px;
 
@@ -48,6 +48,7 @@ body{
 		background:$black;
 		.nav{
 			list-style-type: none;
+			height:$height;
 		}
 
 		.nav li{
@@ -56,6 +57,14 @@ body{
 			height: $height;
 			position:relative;
 		}
+		.nav>li>a:hover::after{
+				content: "";
+				width: 0px;
+				height: 0px;
+				border-left:5px solid transparent;
+				border-right:5px solid transparent;
+				border-top:5px solid #fff;
+			}
 		.nav li a{
 			display: inline-block;
 			width: $item-width;
@@ -71,8 +80,26 @@ body{
 		.nav li ul{
 			display: none;
 		}
-		.nav li:hover ul{
+		.nav li:hover{
+			&>ul{
 			display: block;
+			}
+		}
+		.nav li>ul li:hover::before{
+				content: "";
+				width:0px;
+				height:0px;
+				border-top:3px solid transparent;
+				border-bottom:3px solid transparent;
+				border-left:3px solid $change-color;
+		}
+		.nav li>ul>li:hover::after{
+				content: "";
+				width:0px;
+				height:0px;
+				border-top:3px solid transparent;
+				border-bottom:3px solid transparent;
+				border-left:3px solid $change-color;
 		}
 		.nav li ul{
 		width:$item-width;
@@ -83,16 +110,19 @@ body{
 		position:absolute;
 		li{
 			margin:0px;
+			padding:0px;
 			width:$item-width;
 			height:$list-height;
-			padding:5px;
 			position:relative;
+			text-align: center;
 			& ul{
 				position:absolute;
-				left: $item-width;
+				top:-6px;
+				left: 192px;
+				display: none;
 			}
-			&:hover ul{
-				display: block;
+			&:hover{
+			background:$black;
 			}
 		}
 		li a{
@@ -101,17 +131,18 @@ body{
 		width:$list-width;
 		line-height: $list-height;
 		height:$list-height;
-		text-align:left;
 		color:$list-color;
 		text-decoration: none;
+		text-align:left;
 		&:hover{
 			color:$change-color;
-			display: block;
+			}
 		}
 	}
 }
-	}
+	
 
+	
 	& .header-right{
 		width:1240px-995px;
 		height:$right-height;

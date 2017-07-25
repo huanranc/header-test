@@ -26,12 +26,20 @@ body {
     float: left;
     background: #101010; }
     .header .header-left .nav {
-      list-style-type: none; }
+      list-style-type: none;
+      height: 52px; }
     .header .header-left .nav li {
       float: left;
       width: 188px;
       height: 52px;
       position: relative; }
+    .header .header-left .nav > li > a:hover::after {
+      content: "";
+      width: 0px;
+      height: 0px;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 5px solid #fff; }
     .header .header-left .nav li a {
       display: inline-block;
       width: 188px;
@@ -44,8 +52,22 @@ body {
         color: #ffdd00; }
     .header .header-left .nav li ul {
       display: none; }
-    .header .header-left .nav li:hover ul {
+    .header .header-left .nav li:hover > ul {
       display: block; }
+    .header .header-left .nav li > ul li:hover::before {
+      content: "";
+      width: 0px;
+      height: 0px;
+      border-top: 3px solid transparent;
+      border-bottom: 3px solid transparent;
+      border-left: 3px solid #ffdd00; }
+    .header .header-left .nav li > ul > li:hover::after {
+      content: "";
+      width: 0px;
+      height: 0px;
+      border-top: 3px solid transparent;
+      border-bottom: 3px solid transparent;
+      border-left: 3px solid #ffdd00; }
     .header .header-left .nav li ul {
       width: 188px;
       height: 300px;
@@ -55,27 +77,29 @@ body {
       position: absolute; }
       .header .header-left .nav li ul li {
         margin: 0px;
+        padding: 0px;
         width: 188px;
         height: 35px;
-        padding: 5px;
-        position: relative; }
+        position: relative;
+        text-align: center; }
         .header .header-left .nav li ul li ul {
           position: absolute;
-          left: 188px; }
-        .header .header-left .nav li ul li:hover ul {
-          display: block; }
+          top: -6px;
+          left: 192px;
+          display: none; }
+        .header .header-left .nav li ul li:hover {
+          background: #101010; }
       .header .header-left .nav li ul li a {
         display: inline-block;
         border-bottom: 1px solid #101010;
-        width: 178px;
+        width: 158px;
         line-height: 35px;
         height: 35px;
-        text-align: left;
         color: #ababab;
-        text-decoration: none; }
+        text-decoration: none;
+        text-align: left; }
         .header .header-left .nav li ul li a:hover {
-          color: #ffdd00;
-          display: block; }
+          color: #ffdd00; }
   .header .header-right {
     width: 245px;
     height: 50px;
