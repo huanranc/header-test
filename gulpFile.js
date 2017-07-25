@@ -7,3 +7,11 @@ gulp.task('header',function(){
 		.pipe(sass())
 		.pipe(gulp.dest('header/css'))
 	});
+
+gulp.task('nav',function(){
+	console.log('hello nav');
+	return gulp.src('test/sass/style.scss')
+	    .on('error',sass.logError)
+		.pipe(sass())
+		.pipe(gulp.dest('test/css'))
+	});
