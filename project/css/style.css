@@ -66,28 +66,13 @@ body {
 .nav .nav-bottom {
   width: 60px;
   height: 46px;
-  border-top: 5px solid #fff;
+  border-top: 3px solid #fff;
   -webkit-filter: blur(2px);
   filter: blur(2px);
   position: absolute;
-  top: 46px;
+  top: 44px;
   left: 25px;
   transition: left .5s ease-in-out; }
-
-.nav li:nth-child(1):hover ~ .nav-bottom {
-  left: 0px; }
-
-.nav li:nth-child(2):hover ~ .nav-bottom {
-  left: 175px; }
-
-.nav li:nth-child(3):hover ~ .nav-bottom {
-  left: 380px; }
-
-.nav li:nth-child(4):hover ~ .nav-bottom {
-  left: 585px; }
-
-.nav li:nth-child(5):hover ~ .nav-bottom {
-  left: 815px; }
 
 .nav {
   width: 920px;
