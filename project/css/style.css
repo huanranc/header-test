@@ -62,16 +62,16 @@ body {
   display: block; }
 
 .nav ul {
-  padding: 10px;
+  padding: 6px;
   position: absolute;
-  left: 0;
-  margin: 0px;
-  top: 28.5px;
+  left: 5px;
+  margin: 5px;
+  top: 28px;
   z-index: 1;
   background: transparent; }
   .nav ul ul {
-    top: -10;
-    left: 206px; }
+    top: -10px;
+    left: 98%; }
     .nav ul ul li {
       float: none;
       display: block; }
@@ -82,28 +82,29 @@ body {
   padding: 0px;
   box-sizing: border-box;
   background: #393837;
-  text-align: center; }
+  text-align: center;
+  font-size: 15px; }
 
 .nav-second li:hover {
-  background: -webkit-linear-linear-gradient(#171717, #101010, #080808);
   background: linear-gradient(#171717, #101010, #080808);
-  border-bottom: 1px solid #434343;
-  border-top: 1px solid #434343; }
+  border-top: 2px solid #202020; }
+  .nav-second li:hover .nav-second a:after {
+    display: none; }
   .nav-second li:hover:hover > a {
     text-indent: 1em; }
   .nav-second li:hover .sub-item {
-    display: none; }
+    box-shadow: 1px 1px 1px 0px #202020; }
 
 .nav-second a {
   display: inline-block;
+  color: #bebebe;
   width: 85%;
   float: none;
   text-transform: none;
+  text-transform: uppercase;
   height: 36px;
   line-height: 36px;
-  text-align: left;
-  border-bottom: 1px solid #202020;
-  border-top: 1px solid #40403f; }
+  text-align: left; }
 
 .nav-second ul {
   width: 100%; }
@@ -153,17 +154,6 @@ body {
   border-left: 5px solid transparent;
   border-top: 5px solid #fff; }
 
-.nav .nav-bottom {
-  width: 60px;
-  height: 42px;
-  border-top: 3px solid #fff;
-  -webkit-filter: blur(2px);
-  filter: blur(2px);
-  position: absolute;
-  top: 44px;
-  left: 25px;
-  transition: left .5s ease-in-out; }
-
 .nav-second li:hover > a:before {
   position: absolute;
   left: 0px;
@@ -185,3 +175,39 @@ body {
   border-top: 5px solid transparent;
   border-bottom: 5px solid transparent;
   border-left: 5px solid #f4d401; }
+
+.nav ul:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  bottom: 7px;
+  left: 0%;
+  border-bottom: 1px solid #0f0f0f; }
+
+.nav-second a:after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: 8%;
+  width: 150px;
+  box-shadow: 1px 1px 1px 1px #202020; }
+
+.nav .active:before {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 38px;
+  left: 35px;
+  top: 40px;
+  background: linear-gradient(to right, #454443 0%, #d0d0cf 50%, #585756 100%);
+  z-index: 1; }
+
+.nav .active:after {
+  content: "";
+  position: absolute;
+  height: 4px;
+  width: 36px;
+  left: 35px;
+  top: 40px;
+  background: #454443;
+  opacity: 0.3; }
