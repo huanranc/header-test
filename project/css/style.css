@@ -89,11 +89,11 @@ body {
   background: linear-gradient(#171717, #101010, #080808);
   border-top: 2px solid #202020; }
   .nav-second li:hover .nav-second a:after {
-    display: none; }
+    box-shadow: 1px 1px 1px 0px #202020; }
   .nav-second li:hover:hover > a {
     text-indent: 1em; }
   .nav-second li:hover .sub-item {
-    box-shadow: 1px 1px 1px 0px #202020; }
+    display: none; }
 
 .nav-second a {
   display: inline-block;

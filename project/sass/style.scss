@@ -110,13 +110,13 @@ body{
 		//border-bottom:1px solid #434343;
         border-top:2px solid #202020 ;
       .nav-second a:after{
-      	display: none;
+      	box-shadow:1px 1px 1px 0px #202020 ;
       }
         &:hover>a{
 			text-indent: 1em;
 		}
 		.sub-item{
-			box-shadow:1px 1px 1px 0px #202020 ;
+			display: none;
 		}
 	}
 	a{
