@@ -90,7 +90,7 @@ body {
   border-bottom: 1px solid #434343;
   border-top: 1px solid #434343; }
   .nav-second li:hover:hover > a {
-    text-indent: 2em; }
+    text-indent: 1em; }
   .nav-second li:hover .sub-item {
     display: none; }
 
