@@ -106,9 +106,6 @@ body{
 	}
 	li:hover{
 		background: linear-gradient(#171717,#101010,#080808);
-		//border-bottom:1px solid #434343;
-    	border-bottom:1px solid #202020;
-    	border-top:1px solid #080808;
     	z-index:1;
         &:hover>a{
 			text-indent: 1em;
@@ -131,7 +128,8 @@ body{
        // border-bottom:1px solid #202020;
         //border-top:1px solid #40403f;
         border-bottom:1px solid #202020;
-   		border-top:1px solid #40403f;
+		   border-top:1px solid #40403f;
+		padding: 0 0 0 1px;
 	}
 }
 
@@ -255,6 +253,9 @@ body{
     background:#454443;
     opacity: 0.3;
 }
+#special-li{
+	height: 48px;
+}
 #special{
 	border:none;
 }
@@ -265,7 +266,7 @@ body{
     position: absolute;
     z-index: 1;
     top: -6px;
-    left: -34px;
+    left: -24px;
     background-size:cover;
 	background:url(../images/header2.png) no-repeat;
 }

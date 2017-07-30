@@ -7,3 +7,4 @@ gulp.task('nav',function(){
 		.pipe(sass())
 		.pipe(gulp.dest('project/css'))
 	});
+gulp.watch('project/sass/style.scss', ['A']);
