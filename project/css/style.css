@@ -168,7 +168,7 @@ body {
   text-indent: 1em;
 }
 
-.nav-second li:hover .sub-item {
+.nav-second li:hover>.sub-item {
   display: none;
 }
 

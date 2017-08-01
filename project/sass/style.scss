@@ -224,7 +224,7 @@ body{
         &>a{
 			text-indent: 1em;
 		}
-		.sub-item{
+		&>.sub-item{
 			display: none;
 		}
 	}
