@@ -1,0 +1,25 @@
+{
+  "name": "header-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpFile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp-csslint": "^1.0.0",
+    "gulp-htmlhint": "^0.3.1",
+    "gulp-stylelint": "^4.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huanranc/header-test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/huanranc/header-test/issues"
+  },
+  "homepage": "https://github.com/huanranc/header-test#readme"
+}
