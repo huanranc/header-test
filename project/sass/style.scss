@@ -1,4 +1,4 @@
-$header-width:1224px;
+$header-width:1214px;
 $header-height:42px;
 $nav-width:992px;
 $input-width:178px;
@@ -32,8 +32,7 @@ body{
 }
 .header{
 	width: $header-width;
-	height: 50px;
-	box-sizing: border-box;
+	height: 40px;
 	border: $border solid $gray;
 	background:#000;
 	margin:180px auto;
@@ -284,5 +283,6 @@ body{
     z-index: 1;
     top: -5px;
     left: -24px;
+    background-size:cover;
 	background:url(../images/header2.png) no-repeat;
 }
