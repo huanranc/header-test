@@ -4,11 +4,15 @@
   "description": "",
   "main": "gulpFile.js",
   "dependencies": {},
+<<<<<<< HEAD
   "devDependencies": {
     "gulp-csslint": "^1.0.0",
     "gulp-htmlhint": "^0.3.1",
     "gulp-stylelint": "^4.0.0"
   },
+=======
+  "devDependencies": {},
+>>>>>>> 3dc56b74454e14080709d20c9c761bedf39d8a5a
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
