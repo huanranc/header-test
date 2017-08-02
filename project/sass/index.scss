@@ -1,0 +1,286 @@
+body,
+.nav,
+.nav-menu,
+.nav-menu ul,
+.search-box input,
+.search-box button{
+	padding: 0;
+	margin: 0;
+}
+
+body{
+	background:$black;
+}
+
+.nav,
+.nav-menu,
+.nav-menu ul{
+	list-style: none;
+}
+
+/*header style*/
+
+.header{
+	position:relative;
+	box-sizing: border-box;
+	width: $header-width;
+	height: $header-height;
+	border: $border solid $header-color-border;
+	margin:$header-margin-top auto;
+	background:$header-color-bg;
+	&:before{
+		z-index: 1;
+		position: absolute;
+		top: $header-before-top;
+		left: $header-before-left;
+		width: $header-img-width;
+		height: $header-height;
+		content: "";
+		background:url(../images/header2.png) no-repeat;
+	}
+}
+
+/*nav-menu*/
+
+.nav{
+	float:left;
+	box-sizing: border-box;
+	width: $nav-width;
+	height: $nav-height;
+	margin: 1px auto;
+	ul{
+		z-index: 1;
+		position: absolute;
+		display: none;
+		top: $nav-ul-top;
+		left: $nav-ul-right;
+		margin: $nav-ul-margin;
+		padding: $nav-ul-margin;
+		display: none;
+		background: transparent;
+		ul{
+			left: $nav-ul-ul-left;
+			top:-10px;
+			li{
+				display: block;
+				float: none;
+			}
+		}
+	}
+	li{
+		float:left;
+		position: relative;
+		padding: $nav-li-padding-tb $nav-li-padding-lr;
+	}
+	>li{
+		background: $nav-menu-li;
+	}
+	a{
+		float:left;
+		color:$white;
+		font: bold $nav-font-size Arial, Helvetica;
+		text-decoration: none;
+		text-transform: uppercase;
+	}
+}
+
+/*高亮*/
+
+.nav .active{
+	&:before{
+		content: "";
+		z-index:1;
+		position:absolute;
+		top: 40px;
+		left: 35px;
+		width: $nav-height;
+		height: 2px;
+		background: linear-gradient(to right,$nav-menu-bg-l 0%,$nav-menu-bg-m 50%,$nav-menu-bg-r 100%);
+	}
+	&:after{
+		content: "";
+		position:absolute;
+		top: 40px;
+		left: 35px;
+		width: 36px;
+		height: 4px;
+		background:$nav-menu-bg-l;
+		opacity: 0.3;
+	}
+}
+
+/*clear both*/
+
+.nav:before,
+.anv:after {
+   content: "";
+   display: table;
+}
+
+.nav:after {
+  clear: both;
+}
+
+/*nav-menu hover*/
+
+.nav li:hover>a{
+	color:$light-yellow;
+	border:none;
+}
+
+.nav li:hover>ul{
+	display: block;
+}
+
+.nav-menu{
+	ul{
+		width: 100%;
+	}
+	li{
+		background: $gray;
+		height: $nav-height;
+		padding: 0;
+		text-align: center;
+		width: 100%;
+	}
+	li:hover{
+		z-index:1;
+		box-sizing: border-box;
+		border-bottom: 1px solid $nav-menu-li-hover-line;
+		border-top: 1px solid $nav-menu-li-hover-line;
+		background: linear-gradient($nav-menu-line-right,$nav-menu-line-middle,$nav-menu-line-left);
+		>a{
+			text-indent: 1em;
+		}
+		&>.list-drop-warning-down{
+			display: none;
+		}
+	}
+	a{
+		display: inline-block;
+		width: 85%;
+		height: $nav-a-height;
+		line-height: $nav-a-height;
+		padding: 0 0 0 1px;
+		float: none;
+		color:$nav-menu-font-color;
+		font-size: $nav-menu-font-size;
+		text-align:left;
+		text-transform: uppercase;
+	}
+}
+
+/*nav-menu line*/
+
+.nav-menu a:after{
+	content: "";
+	position: absolute;
+	top: -2px;
+	left: 8%;
+	width: 82%;
+	border-bottom:1px solid $nav-menu-line-bottom;
+	border-top:1px solid $nav-menu-line-top;
+}
+
+.nav-menu  li:hover>a:after,
+.nav-menu  li:first-child>a:after{
+	border: none;
+}
+
+.nav-menu  li:first-child{
+	border-top: none;
+}
+
+.nav ul:after,.nav ul:after{
+	content: "";
+	position: absolute;
+	bottom: 7px;
+	left: 0;
+	width: 100%;
+	border-bottom: 1px solid #0f0f0f;
+}
+
+.nav-menu a:after{
+	content: "";
+	border-bottom:1px solid $nav-menu-line-bottom;
+	border-top:1px solid $nav-menu-line-top;
+  left: 8%;
+  position: absolute;
+  top: -2px;
+  width: 82%;
+}
+
+/*search-box*/
+
+.search-box {
+	display: block;
+	float:left;
+	margin: 1px auto;
+	input {
+		float:left;
+		box-sizing: border-box;
+		width: $input-width;
+		height: $nav-height;
+		padding-left: 20px;
+		border: none;
+		color: $white;
+		background: $gray;
+	}
+	button {
+		width: $button-width;
+		height: $nav-height;
+		margin-left: 1px;
+		border: none;
+		text-align: center;
+		color: $light-yellow;
+		background: $gray;
+		cursor: pointer;
+	}
+}
+
+/*triangle*/
+
+.nav-menu .list-warning-down:after,
+.nav-menu .list-drop-warning-down:after,
+.nav-menu li:hover>a:before,
+.nav-menu  ul li:first-child > a:after{
+	content: "";
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-style:solid;
+}
+
+/*nav triangle down*/
+
+.nav-menu .list-warning-down:after{
+	top: 15px;
+	left:216px;
+	border-width:$triangle-width  $triangle-width  0;
+	border-color:$white transparent transparent;
+}
+
+/*nav-menu triangle down*/
+
+.nav-menu .list-drop-warning-down:after{
+	top: 16px;
+	left:176px;
+	border-width:$triangle-width $triangle-width  0;
+	border-color:$white transparent transparent;
+}
+
+/*nav-menu triangle right*/
+
+.nav-menu li:hover>a:before {
+	top: 12px;
+	left:0;
+	border-width:$triangle-width  0 $triangle-width  $triangle-width ;
+	border-color:transparent transparent transparent $light-yellow
+}
+
+.nav-menu  ul li:first-child > a:after{
+	top:12px;
+	left:-16px;
+	border-width:$triangle-width  0 $triangle-width  $triangle-width ;
+	border-color:transparent transparent transparent $light-yellow
+}

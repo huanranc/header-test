@@ -18,7 +18,7 @@ gulp.task('nav',function(){
 gulp.task('htmlhint',function(){
   
   console.log('hello htmlint');
-  return gulp.src("./*.html")
+  return gulp.src("./project/*.html")
     .pipe(htmlhint())
     .pipe(htmlhint.reporter())
     .pipe(htmlhint.failReporter())
