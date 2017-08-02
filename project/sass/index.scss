@@ -91,8 +91,8 @@ body{
 		content: "";
 		z-index:1;
 		position:absolute;
-		top: 40px;
-		left: 35px;
+		top: $nav-highlight-top;
+		left: $nav-highlight-left;
 		width: $nav-height;
 		height: 2px;
 		background: linear-gradient(to right,$nav-menu-bg-l 0%,$nav-menu-bg-m 50%,$nav-menu-bg-r 100%);
@@ -100,9 +100,9 @@ body{
 	&:after{
 		content: "";
 		position:absolute;
-		top: 40px;
-		left: 35px;
-		width: 36px;
+		top: $nav-highlight-top;
+		left: $nav-highlight-left;
+		width: $nav-highlight-width:;
 		height: 4px;
 		background:$nav-menu-bg-l;
 		opacity: 0.3;
