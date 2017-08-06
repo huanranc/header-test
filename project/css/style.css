@@ -1,22 +1,8 @@
 @charset "UTF-8";
 /*header*/
 /*nav*/
-body,
-.nav,
-.nav-menu,
-.nav-menu ul,
-.search-box input,
-.search-box button {
-  padding: 0;
-  margin: 0; }
-
 body {
   background: #101010; }
-
-.nav,
-.nav-menu,
-.nav-menu ul {
-  list-style: none; }
 
 /*header style*/
 .header {
@@ -115,11 +101,11 @@ body {
   width: 100%; }
 
 .nav-menu li {
-  background: #393837;
-  height: 38px;
   padding: 0;
+  width: 100%;
+  height: 38px;
   text-align: center;
-  width: 100%; }
+  background: #393837; }
 
 .nav-menu li:hover {
   z-index: 1;
@@ -168,15 +154,6 @@ body {
   left: 0;
   width: 100%;
   border-bottom: 1px solid #0f0f0f; }
-
-.nav-menu a:after {
-  content: "";
-  border-bottom: 1px solid #40403f;
-  border-top: 1px solid #202020;
-  left: 8%;
-  position: absolute;
-  top: -2px;
-  width: 82%; }
 
 /*search-box*/
 .search-box {

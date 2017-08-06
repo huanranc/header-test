@@ -1,21 +1,5 @@
-body,
-.nav,
-.nav-menu,
-.nav-menu ul,
-.search-box input,
-.search-box button{
-	padding: 0;
-	margin: 0;
-}
-
 body{
 	background:$black;
-}
-
-.nav,
-.nav-menu,
-.nav-menu ul{
-	list-style: none;
 }
 
 /*header style*/
@@ -60,7 +44,7 @@ body{
 		background: transparent;
 		ul{
 			left: $nav-ul-ul-left;
-			top:-10px;
+			top:$nav-ul-ul-t;
 			li{
 				display: block;
 				float: none;
@@ -94,7 +78,7 @@ body{
 		top: $nav-highlight-top;
 		left: $nav-highlight-left;
 		width: $nav-height;
-		height: 2px;
+		height: $active-before-h;
 		background: linear-gradient(to right,$nav-menu-bg-l 0%,$nav-menu-bg-m 50%,$nav-menu-bg-r 100%);
 	}
 	&:after{
@@ -102,10 +86,10 @@ body{
 		position:absolute;
 		top: $nav-highlight-top;
 		left: $nav-highlight-left;
-		width: $nav-highlight-width:;
-		height: 4px;
+		width: $nav-highlight-width;
+		height: $active-after-h;
 		background:$nav-menu-bg-l;
-		opacity: 0.3;
+		opacity: $active-opacity;
 	}
 }
 
@@ -134,23 +118,23 @@ body{
 
 .nav-menu{
 	ul{
-		width: 100%;
+		width: $width;
 	}
 	li{
-		background: $gray;
-		height: $nav-height;
 		padding: 0;
+		width: $width;
+		height: $nav-height;
 		text-align: center;
-		width: 100%;
+		background: $gray;
 	}
 	li:hover{
 		z-index:1;
 		box-sizing: border-box;
-		border-bottom: 1px solid $nav-menu-li-hover-line;
-		border-top: 1px solid $nav-menu-li-hover-line;
+		border-bottom: $nav-menu-li-hover-line-weight solid $nav-menu-li-hover-line;
+		border-top: $nav-menu-li-hover-line-weight solid $nav-menu-li-hover-line;
 		background: linear-gradient($nav-menu-line-right,$nav-menu-line-middle,$nav-menu-line-left);
 		>a{
-			text-indent: 1em;
+			text-indent: $nav-a-text-indent;
 		}
 		&>.list-drop-warning-down{
 			display: none;
@@ -158,10 +142,10 @@ body{
 	}
 	a{
 		display: inline-block;
-		width: 85%;
+		width: $nav-menu-a-w;
 		height: $nav-a-height;
 		line-height: $nav-a-height;
-		padding: 0 0 0 1px;
+		padding: $nav-menu-a-p $nav-menu-a-p $nav-menu-a-p $nav-menu-a-p-b;
 		float: none;
 		color:$nav-menu-font-color;
 		font-size: $nav-menu-font-size;
@@ -175,11 +159,11 @@ body{
 .nav-menu a:after{
 	content: "";
 	position: absolute;
-	top: -2px;
-	left: 8%;
-	width: 82%;
-	border-bottom:1px solid $nav-menu-line-bottom;
-	border-top:1px solid $nav-menu-line-top;
+	top: $nav-menu-a-after-t;
+	left: $nav-menu-a-after-l;
+	width: $nav-menu-a-after-w;
+	border-bottom:$nav-menu-li-hover-line-weight solid $nav-menu-line-bottom;
+	border-top:$nav-menu-li-hover-line-weight solid $nav-menu-line-top;
 }
 
 .nav-menu  li:hover>a:after,
@@ -194,20 +178,10 @@ body{
 .nav ul:after,.nav ul:after{
 	content: "";
 	position: absolute;
-	bottom: 7px;
-	left: 0;
-	width: 100%;
-	border-bottom: 1px solid #0f0f0f;
-}
-
-.nav-menu a:after{
-	content: "";
-	border-bottom:1px solid $nav-menu-line-bottom;
-	border-top:1px solid $nav-menu-line-top;
-  left: 8%;
-  position: absolute;
-  top: -2px;
-  width: 82%;
+	bottom: $nav-ul-after-b;
+	left: $nav-ul-after-l;
+	width: $width;
+	border-bottom: $nav-menu-li-hover-line-weight solid $nav-ul-after-border;
 }
 
 /*search-box*/
@@ -221,7 +195,7 @@ body{
 		box-sizing: border-box;
 		width: $input-width;
 		height: $nav-height;
-		padding-left: 20px;
+		padding-left: $search-box-input-p-l;
 		border: none;
 		color: $white;
 		background: $gray;
@@ -254,8 +228,8 @@ body{
 /*nav triangle down*/
 
 .nav-menu .list-warning-down:after{
-	top: 15px;
-	left:216px;
+	top:$nav-men-list-warning-down-t;
+	left:$nav-men-list-warning-down-l;
 	border-width:$triangle-width  $triangle-width  0;
 	border-color:$white transparent transparent;
 }
@@ -263,8 +237,8 @@ body{
 /*nav-menu triangle down*/
 
 .nav-menu .list-drop-warning-down:after{
-	top: 16px;
-	left:176px;
+	top: $nav-men-list-drop-warning-down-t;
+	left:$nav-men-list-drop-warning-down-l;
 	border-width:$triangle-width $triangle-width  0;
 	border-color:$white transparent transparent;
 }
@@ -272,15 +246,15 @@ body{
 /*nav-menu triangle right*/
 
 .nav-menu li:hover>a:before {
-	top: 12px;
-	left:0;
+	top: $nav-menu-li-hover-t;
+	left:$nav-menu-li-hover-l;
 	border-width:$triangle-width  0 $triangle-width  $triangle-width ;
 	border-color:transparent transparent transparent $light-yellow
 }
 
 .nav-menu  ul li:first-child > a:after{
-	top:12px;
-	left:-16px;
+	top:$nav-menu-first-child-t;
+	left:$nav-menu-first-child-l;
 	border-width:$triangle-width  0 $triangle-width  $triangle-width ;
 	border-color:transparent transparent transparent $light-yellow
 }
