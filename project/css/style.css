@@ -1,6 +1,19 @@
 @charset "UTF-8";
 /*header*/
 /*nav*/
+.nav,
+.nav-menu,
+.nav-menu ul,
+.search-box input,
+.search-box button {
+  padding: 0;
+  margin: 0; }
+
+.nav,
+.nav-menu,
+.nav-menu ul {
+  list-style: none; }
+
 body {
   background: #101010; }
 
@@ -176,7 +189,10 @@ body {
     border: none;
     text-align: center;
     color: #f4d401;
-    background: #393837;
+    background-color: #393837;
+    background-image: url(../images/search.png);
+    background-repeat: no-repeat;
+    background-position: center;
     cursor: pointer; }
 
 /*triangle*/

@@ -22,21 +22,11 @@ html {
  * Remove the margin in all browsers (opinionated).
  */
 
-body,
-.nav,
-.nav-menu,
-.nav-menu ul,
-.search-box input,
-.search-box button{
+body{
 	padding: 0;
 	margin: 0;
 }
 
-.nav,
-.nav-menu,
-.nav-menu ul{
-	list-style: none;
-}
 
 /**
  * Add the correct display in IE 9-.
