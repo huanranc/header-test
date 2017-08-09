@@ -1,24 +1,28 @@
-.nav,
-.nav-menu,
-.nav-menu ul,
-.search-box input,
-.search-box button{
+.navbar-nav,
+.nav-sub,
+.nav-sub ul,
+.navbar-search input,
+.navbar-search button{
 	padding: 0;
 	margin: 0;
 }
 
-.nav,
-.nav-menu,
-.nav-menu ul{
+.navbar-nav,
+.nav-sub,
+.nav-sub ul{
 	list-style: none;
 }
 body{
-	background:$black;
+	background:$body-bg;
+}
+nav{
+	display: block;
+  float:left;
 }
 
 /*header style*/
 
-.header{
+.header-navbar{
 	position:relative;
 	box-sizing: border-box;
 	width: $header-width;
@@ -38,9 +42,9 @@ body{
 	}
 }
 
-/*nav-menu*/
+/*navbar-nav*/
 
-.nav{
+.navbar-nav{
 	float:left;
 	box-sizing: border-box;
 	width: $nav-width;
@@ -71,7 +75,7 @@ body{
 		padding: $nav-li-padding-tb $nav-li-padding-lr;
 	}
 	>li{
-		background: $nav-menu-li;
+		background: $nav-sub-li;
 	}
 	a{
 		float:left;
@@ -84,7 +88,7 @@ body{
 
 /*高亮*/
 
-.nav .active{
+.navbar-nav .active{
 	&:before{
 		content: "";
 		z-index:1;
@@ -93,7 +97,7 @@ body{
 		left: $nav-highlight-left;
 		width: $nav-height;
 		height: $active-before-h;
-		background: linear-gradient(to right,$nav-menu-bg-l 0%,$nav-menu-bg-m 50%,$nav-menu-bg-r 100%);
+		background: linear-gradient(to right,$nav-sub-bg-l 0%,$nav-sub-bg-m 50%,$nav-sub-bg-r 100%);
 	}
 	&:after{
 		content: "";
@@ -102,35 +106,45 @@ body{
 		left: $nav-highlight-left;
 		width: $nav-highlight-width;
 		height: $active-after-h;
-		background:$nav-menu-bg-l;
+		background:$nav-sub-bg-l;
 		opacity: $active-opacity;
 	}
 }
 
 /*clear both*/
 
-.nav:before,
-.anv:after {
+nav:before,
+nav:after {
 	 content: "";
 	 display: table;
 }
 
-.nav:after {
+nav:after {
 	clear: both;
 }
 
-/*nav-menu hover*/
+.navbar-nav:before,
+.navbar-nav:after {
+	 content: "";
+	 display: table;
+}
 
-.nav li:hover>a{
-	color:$light-yellow;
+.navbar-nav:after {
+	clear: both;
+}
+
+/*nav-sub hover*/
+
+.navbar-nav li:hover>a{
+	color:$nav-li-hover-a;
 	border:none;
 }
 
-.nav li:hover>ul{
+.navbar-nav li:hover>ul{
 	display: block;
 }
 
-.nav-menu{
+.nav-sub{
 	ul{
 		width: $width;
 	}
@@ -139,14 +153,14 @@ body{
 		width: $width;
 		height: $nav-height;
 		text-align: center;
-		background: $gray;
+		background: $nav-sub-li-bg;
 	}
 	li:hover{
 		z-index:1;
 		box-sizing: border-box;
-		border-bottom: $nav-menu-li-hover-line-weight solid $nav-menu-li-hover-line;
-		border-top: $nav-menu-li-hover-line-weight solid $nav-menu-li-hover-line;
-		background: linear-gradient($nav-menu-line-right,$nav-menu-line-middle,$nav-menu-line-left);
+		border-bottom: $nav-sub-li-hover-line-weight solid $nav-sub-li-hover-line;
+		border-top: $nav-sub-li-hover-line-weight solid $nav-sub-li-hover-line;
+		background: linear-gradient($nav-sub-line-right,$nav-sub-line-middle,$nav-sub-line-left);
 		>a{
 			text-indent: $nav-a-text-indent;
 		}
@@ -156,51 +170,51 @@ body{
 	}
 	a{
 		display: inline-block;
-		width: $nav-menu-a-w;
+		width: $nav-sub-a-w;
 		height: $nav-a-height;
 		line-height: $nav-a-height;
-		padding: $nav-menu-a-p $nav-menu-a-p $nav-menu-a-p $nav-menu-a-p-b;
+		padding: $nav-sub-a-p $nav-sub-a-p $nav-sub-a-p $nav-sub-a-p-b;
 		float: none;
-		color:$nav-menu-font-color;
-		font-size: $nav-menu-font-size;
+		color:$nav-sub-font-color;
+		font-size: $nav-sub-font-size;
 		text-align:left;
 		text-transform: uppercase;
 	}
 }
 
-/*nav-menu line*/
+/*nav-sub line*/
 
-.nav-menu a:after{
+.nav-sub a:after{
 	content: "";
 	position: absolute;
-	top: $nav-menu-a-after-t;
-	left: $nav-menu-a-after-l;
-	width: $nav-menu-a-after-w;
-	border-bottom:$nav-menu-li-hover-line-weight solid $nav-menu-line-bottom;
-	border-top:$nav-menu-li-hover-line-weight solid $nav-menu-line-top;
+	top: $nav-sub-a-after-t;
+	left: $nav-sub-a-after-l;
+	width: $nav-sub-a-after-w;
+	border-bottom:$nav-sub-li-hover-line-weight solid $nav-sub-line-bottom;
+	border-top:$nav-sub-li-hover-line-weight solid $nav-sub-line-top;
 }
 
-.nav-menu  li:hover>a:after,
-.nav-menu  li:first-child>a:after{
+.nav-sub  li:hover>a:after,
+.nav-sub  li:first-child>a:after{
 	border: none;
 }
 
-.nav-menu  li:first-child{
+.nav-sub  li:first-child{
 	border-top: none;
 }
 
-.nav ul:after,.nav ul:after{
+.navbar-nav ul:after,.navbar-nav ul:after{
 	content: "";
 	position: absolute;
 	bottom: $nav-ul-after-b;
 	left: $nav-ul-after-l;
 	width: $width;
-	border-bottom: $nav-menu-li-hover-line-weight solid $nav-ul-after-border;
+	border-bottom: $nav-sub-li-hover-line-weight solid $nav-ul-after-border;
 }
 
-/*search-box*/
+/*navbar-search*/
 
-.search-box {
+.navbar-search {
 	display: block;
 	float:left;
 	margin: 1px auto;
@@ -209,10 +223,10 @@ body{
 		box-sizing: border-box;
 		width: $input-width;
 		height: $nav-height;
-		padding-left: $search-box-input-p-l;
+		padding-left: $navbar-search-input-p-l;
 		border: none;
-		color: $white;
-		background: $gray;
+		color: $navbar-search-input-color;
+		background: $navbar-search-input-bg;
 	}
 	button {
 		width: $button-width;
@@ -231,10 +245,10 @@ body{
 
 /*triangle*/
 
-.nav-menu .list-warning-down:after,
-.nav-menu .list-drop-warning-down:after,
-.nav-menu li:hover>a:before,
-.nav-menu  ul li:first-child > a:after{
+.nav-sub .list-warning-down:after,
+.nav-sub .list-drop-warning-down:after,
+.nav-sub li:hover>a:before,
+.nav-sub  ul li:first-child > a:after{
 	content: "";
 	position: absolute;
 	width: 0;
@@ -244,34 +258,34 @@ body{
 
 /*nav triangle down*/
 
-.nav-menu .list-warning-down:after{
-	top:$nav-menu-list-warning-down-t;
-	left:$nav-menu-list-warning-down-l;
+.nav-sub .list-warning-down:after{
+	top:$nav-sub-list-warning-down-t;
+	left:$nav-sub-list-warning-down-l;
 	border-width:$triangle-width  $triangle-width  0;
 	border-color:$white transparent transparent;
 }
 
-/*nav-menu triangle down*/
+/*nav-sub triangle down*/
 
-.nav-menu .list-drop-warning-down:after{
-	top: $nav-menu-list-drop-warning-down-t;
-	left:$nav-menu-list-drop-warning-down-l;
+.nav-sub .list-drop-warning-down:after{
+	top: $nav-sub-list-drop-warning-down-t;
+	left:$nav-sub-list-drop-warning-down-l;
 	border-width:$triangle-width $triangle-width  0;
 	border-color:$white transparent transparent;
 }
 
-/*nav-menu triangle right*/
+/*nav-bar triangle right*/
 
-.nav-menu li:hover>a:before {
-	top: $nav-menu-li-hover-t;
-	left:$nav-menu-li-hover-l;
+.nav-sub li:hover>a:before {
+	top: $nav-sub-li-hover-t;
+	left:$nav-sub-li-hover-l;
 	border-width:$triangle-width  0 $triangle-width  $triangle-width ;
 	border-color:transparent transparent transparent $light-yellow
 }
 
-.nav-menu  ul li:first-child > a:after{
-	top:$nav-menu-first-child-t;
-	left:$nav-menu-first-child-l;
+.nav-sub  ul li:first-child > a:after{
+	top:$nav-sub-first-child-t;
+	left:$nav-sub-first-child-l;
 	border-width:$triangle-width  0 $triangle-width  $triangle-width ;
 	border-color:transparent transparent transparent $light-yellow
 }
