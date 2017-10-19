@@ -11,7 +11,7 @@ body {
 .header {
     width: 1214px;
 		border: 5px solid $gray;
-		padding: 2px;
+		padding: 1px;
 		box-sizing: border-box;
     background: #000000;
 }
@@ -28,18 +28,90 @@ body {
 				padding-left: 32px;
 				padding-right: 42px;
         li {
-						float: left;
-						padding: 0 19px;
-						font-size: 1rem;
-						text-transform: uppercase;
-						font-weight: bold;
+					float: left;
+					position: relative;
+					padding: 10px 19px;
+					font-size: 1rem;
+					text-transform: uppercase;
+					font-weight: bold;
         }
         a {
-            float: left;
-            text-decoration: none;
-            color: #fff;
+          float: left;
+          text-decoration: none;
+          color: #fff;
         }
-    }
+		}
+
+		.nav-item-sub {
+			position: absolute;
+			top: 20px;
+			left: 0px;
+			display: none;
+			width: 100%;
+			margin: 0;
+			margin-top: 15px;
+			padding: 5px 0px;
+			list-style: none;
+			background: transparent;
+
+			li {
+				float: none;
+				display: block;
+				position: relative;
+				font-size: 1rem;
+				text-transform: uppercase;
+				font-weight: bold;
+				background: $gray;
+			}
+			a {
+				float: none;
+				text-decoration: none;
+				color: #fff;
+			}
+		}
+}
+
+.nav-item-sub li:first-child::before {
+	display: none;
+}
+
+.nav-item-sub li::before {
+	content: "";
+	position: absolute;
+	width: 80%;
+	top: 0px;
+	left: 10%;
+	border: 1px solid #202020;
+}
+
+.nav-item-sub li::after {
+	content: "";
+	position: absolute;
+	width: 80%;
+	bottom: 0;
+	left: 10%;
+	border: 1px solid #3d3d3c;
+}
+
+
+.nav-item li:hover >.nav-item-sub {
+	display: block;
+}
+
+.nav-item-sub li:hover >ul {
+	display: block;
+}
+
+.nav-item-sub>li ul {
+	z-index: 1;
+	position: absolute;
+	display: none;
+	top: 0;
+	width: 100%;
+	left: 100%;
+	margin: 0;
+	padding: 5px;
+	background: transparent;
 }
 
 .search-box {
@@ -78,12 +150,12 @@ body {
 	clear: both;
 }
 
-.nav-item:before,
-.nav-item:after {
+ul:before,
+ul:after {
 	 content: "";
 	 display: table;
 }
 
-.nav-item:after {
+ul:after {
 	clear: both;
 }
