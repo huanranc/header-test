@@ -29,14 +29,13 @@ body {
     .nav .nav-item li {
       float: left;
       position: relative;
-      padding: 10px 19px;
+      padding: 10px 19px; }
+    .nav .nav-item a {
+      text-decoration: none;
+      color: #fff;
       font-size: 1rem;
       text-transform: uppercase;
       font-weight: bold; }
-    .nav .nav-item a {
-      float: left;
-      text-decoration: none;
-      color: #fff; }
   .nav .nav-item-sub {
     position: absolute;
     top: 20px;
@@ -44,7 +43,7 @@ body {
     display: none;
     width: 100%;
     margin: 0;
-    margin-top: 15px;
+    margin-top: 14px;
     padding: 5px 0px;
     list-style: none;
     background: transparent; }
@@ -52,14 +51,18 @@ body {
       float: none;
       display: block;
       position: relative;
-      font-size: 1rem;
       text-transform: uppercase;
-      font-weight: bold;
       background: #393837; }
     .nav .nav-item-sub a {
-      float: none;
+      display: inline-block;
+      font-size: 1rem;
+      font-weight: bold;
       text-decoration: none;
       color: #fff; }
+
+.nav-item li:hover > a {
+  color: #ffd400;
+  text-indent: 1em; }
 
 .nav-item-sub li:first-child::before {
   display: none; }
@@ -70,16 +73,18 @@ body {
   width: 80%;
   top: 0px;
   left: 10%;
-  border: 1px solid #202020; }
+  border-top: 1px solid #202020;
+  border-bottom: 1px solid #3d3d3c; }
 
+/*
 .nav-item-sub li::after {
-  content: "";
-  position: absolute;
-  width: 80%;
-  bottom: 0;
-  left: 10%;
-  border: 1px solid #3d3d3c; }
-
+	content: "";
+	position: absolute;
+	width: 80%;
+	bottom: 0;
+	left: 10%;
+	border: 1px solid #3d3d3c;
+}*/
 .nav-item li:hover > .nav-item-sub {
   display: block; }
 
@@ -93,9 +98,28 @@ body {
   top: 0;
   width: 100%;
   left: 100%;
-  margin: 0;
-  padding: 5px;
+  margin: -5px;
+  margin-top: 0;
+  padding: 10px;
+  padding-top: 0;
   background: transparent; }
+
+.nav-item-sub li:hover {
+  border-top: 1px solid #404040;
+  border-bottom: 1px solid #404040;
+  background: linear-gradient(#080808, #101010, #171715); }
+
+.nav-item-sub li:hover:first-child {
+  border: none; }
+
+.nav-item-sub li:hover::before {
+  border: none; }
+
+.nav-item-sub li:hover + li::before {
+  border: none; }
+
+.nav-item-sub li:hover > a {
+  color: #ffd400; }
 
 .search-box {
   display: flex;
